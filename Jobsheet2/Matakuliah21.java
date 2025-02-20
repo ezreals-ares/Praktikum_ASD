@@ -17,8 +17,6 @@ public class Matakuliah21 {
         this.jumlahJam = jumlahJam;
     }
 
-
-
     void tampilInformasi () {
         System.out.println("KodeMK: " + kodeMK);
         System.out.println("Nama: " + nama);
