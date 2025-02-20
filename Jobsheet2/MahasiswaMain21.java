@@ -17,5 +17,10 @@ public class MahasiswaMain21 {
         mhs2.updateIpk(3.30);
         mhs2.tampilInformasi();
 
+
+        Mahasiswa21 mhsNawafAzril = new Mahasiswa21("Nawaf Azril Annaufal", "244107020047", 3.99, "TI 1E");
+        mhsNawafAzril.updateIpk(4.0);
+        mhsNawafAzril.tampilInformasi();
+
     }
 }
