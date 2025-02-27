@@ -7,4 +7,11 @@ public class Mahasiswa21 {
     public String kelas;
     public float ipk;
 
+    String cekinfo() {
+        return "NIM     : " + nim + "\n" +
+               "Nama    : " + nama + "\n" +
+               "Kelas   : " + kelas + "\n" +
+               "IPK     : " + ipk;
+    }
+
 }
