@@ -1,31 +1,27 @@
 package Praktikum_ASD.Jobsheet3.Praktikum03;
-
 import java.util.Scanner;
-
 public class MatakuliahDemo21 {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Matakuliah21[] arrayOfMatakuliah = new Matakuliah21[3];
-        String kode, nama, dummy;
-        int sks, jumlahJam;
+        System.out.print("Masukkan jumlah matakuliah : ");
+        int jumlahMatakuliah = sc.nextInt();
 
+        Matakuliah21[] arrayOfMatakuliah = new Matakuliah21[jumlahMatakuliah];
+        
         for (int i = 0; i < arrayOfMatakuliah.length; i++) {
-            System.out.println("Masukkan Data Matakuliah ke-" + (i + 1));
-            System.out.println("Kode    : ");
-            kode = sc.nextLine();
-            System.out.println("Nama    : ");
-            nama = sc.nextLine();
-            System.out.println("SKS     : ");
-            dummy = sc.nextLine();
-            sks = Integer.parseInt(dummy);
-            System.out.println("Jumlah Jam : ");
-            dummy = sc.nextLine();
-            jumlahJam = Integer.parseInt(dummy);
-            System.out.println("====================================");
-
-            arrayOfMatakuliah[i] = new Matakuliah21(kode, nama, sks, jumlahJam);
+            System.out.println("Masukkan Data Matakuliah ke-" + (i+1));
+            arrayOfMatakuliah[i] = new Matakuliah21("", "", 0, 0);
+            arrayOfMatakuliah[i].tambahdata();
         }
+
+        System.out.println("Data Matakuliah yang telah dimasukkan : ");
+        for (int i = 0; i < arrayOfMatakuliah.length; i++) {
+            System.out.println("Data Matakuliah ke-" + (i+1));
+            arrayOfMatakuliah[i].cetakInfo();
+        }
+
+       
 
         sc.close();
     }
