@@ -13,6 +13,7 @@ public class MahasiswaDemo21 {
             System.out.println("3. Melihat Tugas Teratas");
             System.out.println("4. Melihat Daftar Tugas");
             System.out.println("5. Melihat Tugas Terbawah");
+            System.out.println("6. Lihat Jumlah Tugas yang Dikumpulkan");
             System.out.print("Pilih: ");
             pilih = sc.nextInt();
             sc.nextLine();
@@ -28,6 +29,7 @@ public class MahasiswaDemo21 {
                     stack.push(mhs);
                     System.out.printf("Tugas %s telah dikumpulkan\n", mhs.nama);
                     break;
+
                 case 2:
                     Mahasiswa21 dinilai = stack.pop();
                     if (dinilai != null) {
@@ -37,26 +39,36 @@ public class MahasiswaDemo21 {
                         sc.nextLine();
                         dinilai.tugasDinilai(nilai);
                         System.out.printf("Nilai Tugas %s adalah %d\n", dinilai.nama, dinilai.nilai);
+                        String biner = stack.konversiDesimalKeBiner(nilai);
+                        System.out.println("Nilai Biner Tugas: " + biner);
                     }
                     break;
+
                 case 3:
                     Mahasiswa21 lihat = stack.peek();
                     if (lihat != null) {
                         System.out.printf("Tugas teratas adalah %s\n", lihat.nama);
                     }
                     break;
+
                 case 4:
                     System.out.println("Daftar semua Tugas:");
                     System.out.println("Nama\tNIM\tKelas");
                     stack.print();
                     break;
+
                 case 5:
                     Mahasiswa21 terbawah = stack.bottom();
                     if (terbawah != null) {
                         System.out.printf("Tugas terbawah adalah %s\n", terbawah.nama);
                     }
                     break;
-                
+
+                case 6:
+                    int jumlah = stack.jumlahTugas();
+                    System.out.printf("Jumlah tugas yang dikumpulkan: %d\n", jumlah);
+                    break;
+
                 default:
                     System.out.println("Pilihan tidak valid, silakan coba lagi.");
                     break;
